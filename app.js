@@ -7,7 +7,9 @@ submit.addEventListener('click', async (e) => {
   e.preventDefault();
   outputTextArea.value = '';
   missingParameters.innerText = '';
-  const input = inputTextArea.value;
+  let input = inputTextArea.value;
+  let logMessageRegex = /^.*\):\n/;
+  input = input.replace(logMessageRegex, '');
   let arrayOfErrors = [];
   clanNameRegex = /Clan Name/gi;
   totalTrophiesRegex = /Total Trophies/gi;
