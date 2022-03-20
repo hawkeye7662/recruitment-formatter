@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/lux/bootstrap.min.css"
+    />
+
+    <title>Everdale Valley Recruitment Formatter</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Valley Recruitment Formatter</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/"
+                >CM
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cq.html">CQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">ED</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container d-grid gap-4">
+      <form>
+        <legend>Everdale</legend>
+        <div class="form-group">
+          <div class="mb-3">
+            <label for="inputTextArea" class="form-label mt-4"
+              >Enter text to be searched for format</label
+            >
+            <textarea
+              class="form-control"
+              id="inputTextArea"
+              rows="12"
+              spellcheck="false"
+              required
+            ></textarea>
+            <div class="invalid-feedback">
+              Please enter a message in the textarea.
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3" id="submit">
+          Submit
+        </button>
+      </form>
+      <form class="mb-5">
+        <div class="form-group">
+          <label for="outputTextArea" class="form-label mt-4"
+            >Formatted Output
+          </label>
+          <p hidden>Missing Parameters: <span id="missingParams"></span></p>
+          <textarea
+            disabled
+            class="form-control"
+            id="outputTextArea"
+            rows="12"
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </form>
+    </div>
+    <footer class="footer mt-auto py-3 mt-5 bg-light">
+      <div class="container">
+        <span class="text-muted">&copy 2022. All rights reserved</span>
+      </div>
+    </footer>
+    <script src="ed.js"></script>
+  </body>
+</html>
