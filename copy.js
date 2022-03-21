@@ -1,4 +1,17 @@
-var clipboard = new ClipboardJS('.btn-copy');
+var clipboard = new ClipboardJS('.btn-copy', {
+  text: function () {
+    if (missingParameters.innerText == '') {
+      return outputTextArea.value;
+    }
+    return (
+      'Your post was missing the following parameters: ' +
+      missingParameters.innerText +
+      '\n' +
+      'Your post with missing parameters added:\n' +
+      outputTextArea.value  
+    );
+  },
+});
 
 copyButton = document.querySelector('#copybtn');
 clipboard.on('error', function (e) {

@@ -7,7 +7,7 @@ submit.addEventListener('click', async (e) => {
   e.preventDefault();
   outputTextArea.value = '';
   missingParameters.innerText = '';
-  let input = inputTextArea.value;
+  let input = inputTextArea.value.trim();
   let logMessageRegex = /^.*\):\n/;
   input = input.replace(logMessageRegex, '');
   let arrayOfErrors = [];
@@ -32,12 +32,14 @@ submit.addEventListener('click', async (e) => {
     missingParameters.parentElement.removeAttribute('hidden');
     missingParameters.innerText += arrayOfErrors.join(',');
     multipleSpacesRegex = /\s{4,}/g;
-    outputTextArea.value =
+    outputTextArea.value = (
       input.replaceAll(multipleSpacesRegex, '\n') +
       '\n' +
       arrayOfErrors.join(':\n') +
-      ':';
+      ':'
+    ).trim();
   } else {
+    missingParameters.parentElement.setAttribute('hidden', '');
     outputTextArea.value = 'Post matches format!';
   }
 });
