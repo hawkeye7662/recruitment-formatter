@@ -23,7 +23,7 @@
     <title>Clan Recruitment Format Helper</title>
   </head>
   <body>
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Recruitment Formatter</a>
         <button
@@ -86,14 +86,24 @@
             >Formatted Output
           </label>
           <p hidden>Missing Parameters: <span id="missingParams"></span></p>
+
           <textarea
-            disabled
+            readonly
             class="form-control"
             id="outputTextArea"
             rows="12"
             spellcheck="false"
           ></textarea>
         </div>
+        <button
+          type="button"
+          class="btn btn-primary mt-3 btn-copy"
+          id="copybtn"
+          data-clipboard-action="copy"
+          data-clipboard-target="#outputTextArea"
+        >
+          Copy
+        </button>
       </form>
     </div>
     <footer class="footer mt-auto py-3 mt-5 bg-light">
@@ -102,5 +112,7 @@
       </div>
     </footer>
     <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+    <script src="copy.js"></script>
   </body>
 </html>
