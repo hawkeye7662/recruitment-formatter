@@ -14,7 +14,7 @@ submit.addEventListener('click', async (e) => {
   clanNameRegex = /Clan Name/gi;
   languageRegex = /Language/gi;
   leagueRegex = /League/gi;
-  requiredStarsRegex = /Required Stars/gi;
+  requiredIslandRegex = /Required Island/gi;
   typeRegex = /Type?/gi;
   if (!input.match(clanNameRegex)) {
     arrayOfErrors.push('Clan Name');
@@ -25,8 +25,8 @@ submit.addEventListener('click', async (e) => {
   if (!input.match(leagueRegex)) {
     arrayOfErrors.push('League');
   }
-  if (!input.match(requiredStarsRegex)) {
-    arrayOfErrors.push('Required Stars');
+  if (!input.match(requiredIslandRegex)) {
+    arrayOfErrors.push('Required Island');
   }
   if (!input.match(typeRegex)) {
     arrayOfErrors.push('Type');
