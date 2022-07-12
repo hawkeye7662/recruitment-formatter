@@ -11,22 +11,22 @@ submit.addEventListener('click', async (e) => {
   let logMessageRegex = /^.*\):\n/;
   input = input.replace(logMessageRegex, '');
   let arrayOfErrors = [];
-  valleyNameRegex = /Valley Name/gi;
-  memberRegex = /Members?/gi;
-  codeRegex = /Codes?/gi;
-  levelRegex = /Level/gi;
-  if (!input.match(valleyNameRegex)) {
-    arrayOfErrors.push('Valley Name');
+  valleyLinkRegex = /https:\/\/link\.everdale\.com\/([a-z]{1,2})?\?action=OpenValleyProfile&tag=(%23)?[0289OPYLQGRJCUVpylqgrjcuvo]{3,}/gi;
+//   memberRegex = /Members?/gi;
+//   codeRegex = /Codes?/gi;
+//   levelRegex = /Level/gi;
+  if (!input.match(valleyLinkRegex)) {
+    arrayOfErrors.push('Valley Link');
   }
-  if (!input.match(memberRegex)) {
-    arrayOfErrors.push('Members');
-  }
-  if (!input.match(codeRegex)) {
-    arrayOfErrors.push('Codes');
-  }
-  if (!input.match(levelRegex)) {
-    arrayOfErrors.push('Level');
-  }
+//   if (!input.match(memberRegex)) {
+//     arrayOfErrors.push('Members');
+//   }
+//   if (!input.match(codeRegex)) {
+//     arrayOfErrors.push('Codes');
+//   }
+//   if (!input.match(levelRegex)) {
+//     arrayOfErrors.push('Level');
+//   }
 
   if (arrayOfErrors.length != 0) {
     missingParameters.parentElement.removeAttribute('hidden');
