@@ -17,6 +17,7 @@ submit.addEventListener('click', async (e) => {
   requiredTrophiesRegex = /Required Trophies/gi;
   memberRegex = /Members?/gi;
   locationRegex = /location/gi;
+  clanLevelRegex = /Clan Level/gi;
   if (!input.match(clanNameRegex)) {
     arrayOfErrors.push('Clan Name');
   }
@@ -34,6 +35,9 @@ submit.addEventListener('click', async (e) => {
   }
   if (!input.match(locationRegex)) {
     arrayOfErrors.push('Location');
+  }
+  if (!input.match(clanLevelRegex)) {
+    arrayOfErrors.push('Clan Level');
   }
 
   if (arrayOfErrors.length != 0) {
